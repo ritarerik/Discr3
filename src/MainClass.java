@@ -10,58 +10,60 @@ public class MainClass {
 		
 		while (!exit) {
 			
-			System.out.println("> Ğàçìåğíîñòü ìàòğèöû >> (4;8)");
+			System.out.println("> Ğàçìåğíîñòü ñëó÷àéíîé ìàòğèöû >> (4;8)");
+			System.out.println("> Çàğàíåå ââåä¸ííûå ìàòğèöû >> 1");
 			System.out.println("> Âûõîä >> 0");
 			System.out.print("\n  >> ");
 			
-			int size = 0;			
+			int input = 0;			
 			
 			try { 
-				size = in.nextInt(); 
+				input = in.nextInt(); 
 				
-				if (size == 0) exit = true;
-				else if (size < 4 || size > 8) throw new Exception();
+				if (input == 0) exit = true;
+				else if (input != 1 && (input < 4 || input > 8)) throw new Exception();
 				
 			} catch (Exception e) { 
-				System.out.println("\n> Íåâåğíûé ââîä, ïîæàëóéñòà, ââåäèòå ÷èñëî (4;8)\n");
+				System.out.println("\n> Íåâåğíûé ââîä\n");
 				continue; 
 			}
 			
 			if (!exit) {			
 				System.out.println();
 				
-				System.out.println(">> ÌÀÒĞÈÖÀ ÑÌÅÆÍÎÑÒÈ >\n");
-//				boolean A[][] = Matrix.createBOOLEAN(size);
-//				boolean A[][] = {{false, true, true, false, true, false}, 
-//								 {false, true, false, false, true, false}, 
-//								 {false, false, false, false, false, false}, 
-//								 {false, false, true, false, false, false}, 
-//								 {false, false, false, true, false, false}, 
-//								 {true, false, false, false, true, true}};
-				boolean A[][] = {{false, true,  true,  false, false, false, false, false, false},
-								 {false, false, false, true,  false, false, false, false, false},
-								 {false, false, false, true,  false, false, false, false, false},
-								 {false, false, false, false, true,  false, false, false, false},
-								 {false, false, false, false, false, true,  true,  true,  false},
-								 {false, false, false, false, false, false, false, false, false},
-								 {false, false, false, false, false, false, false, false, false},
-								 {false, false, false, false, false, false, false, false, true},
-								 {false, false, false, false, false, false, false, false, false}};
-		        Matrix.printBOOLEAN(A, 'x', 'x'); 
-		        System.out.println("\n");
-		        
-		        boolean b = Matrix.isGraphBipartite(A, 0);	
-		        if (b) System.out.println(">> ÃĞÀÔ ßÂËßÅÒÑß ÄÂÓÄÎËÜÍÛÌ");
-		        	else System.out.println(">> ÃĞÀÔ ÍÅ ßÂËßÅÒÑß ÄÂÓÄÎËÜÍÛÌ");		        
-		        
-		        System.out.println("\n\n");	
-		        
+				if (input == 1) {
+				
+					boolean A[][] = {{false, true,  true,  false, false, false, false, false, false},
+									 {false, false, false, true,  false, false, false, false, false},
+									 {false, false, false, true,  false, false, false, false, false},
+									 {false, false, false, false, true,  false, false, false, false},
+									 {false, false, false, false, false, true,  true,  true,  false},
+									 {false, false, false, false, false, false, false, false, false},
+									 {false, false, false, false, false, false, false, false, false},
+									 {false, false, false, false, false, false, false, false, true},
+									 {false, false, false, false, false, false, false, false, false}};
+					GraphBipartite.isGraphBipartite(A);
+			         
+			        boolean B[][] = {{false, true,  true,  false, false, false, false, false, false},
+							 		 {false, false, false, false, true,  false, false, false, false},
+							 		 {false, false, false, true,  false, false, false, false, false},
+							 		 {false, false, false, false, true,  false, false, false, false},
+							 		 {false, false, false, false, false, true,  true,  true,  false},
+							 		 {false, false, false, false, false, false, false, false, false},
+							 		 {false, false, false, false, false, false, false, false, false},
+							 		 {false, false, false, false, false, false, false, false, true},
+							 		 {false, false, false, false, false, false, false, false, false}};
+			        GraphBipartite.isGraphBipartite(B);
+				    
+				} else {
+					GraphBipartite.isGraphBipartite(Matrix.createBOOLEAN(input));
+				}
+		         
 			} 
 		}
 		
 		in.close();
 		
 	}
-	
 	
 }
