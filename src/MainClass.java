@@ -32,16 +32,25 @@ public class MainClass {
 				
 				System.out.println(">> люрпхжю ялефмнярх >\n");
 //				boolean A[][] = Matrix.createBOOLEAN(size);
-				boolean A[][] = {{false, true, true, false, true, false}, 
-								 {false, true, false, false, true, false}, 
-								 {false, false, false, false, false, false}, 
-								 {false, false, true, false, false, false}, 
-								 {false, false, false, true, false, false}, 
-								 {true, false, false, false, true, true}};
+//				boolean A[][] = {{false, true, true, false, true, false}, 
+//								 {false, true, false, false, true, false}, 
+//								 {false, false, false, false, false, false}, 
+//								 {false, false, true, false, false, false}, 
+//								 {false, false, false, true, false, false}, 
+//								 {true, false, false, false, true, true}};
+				boolean A[][] = {{false, true,  true,  false, false, false, false, false, false},
+								 {false, false, false, true,  false, false, false, false, false},
+								 {false, false, false, true,  false, false, false, false, false},
+								 {false, false, false, false, true,  false, false, false, false},
+								 {false, false, false, false, false, true,  true,  true,  false},
+								 {false, false, false, false, false, false, false, false, false},
+								 {false, false, false, false, false, false, false, false, false},
+								 {false, false, false, false, false, false, false, false, true},
+								 {false, false, false, false, false, false, false, false, false}};
 		        Matrix.printBOOLEAN(A, 'x', 'x'); 
 		        System.out.println("\n");
 		        
-		        boolean b = Matrix.isGraphBipartite(A);	
+		        boolean b = Matrix.isGraphBipartite(A, 0);	
 		        if (b) System.out.println(">> цпют ъбкъеряъ дбсднкэмшл");
 		        	else System.out.println(">> цпют ме ъбкъеряъ дбсднкэмшл");		        
 		        
