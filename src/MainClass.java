@@ -21,7 +21,8 @@ public class MainClass {
 				input = in.nextInt(); 
 				
 				if (input == 0) exit = true;
-				else if (input != 1 && (input < 4 || input > 8)) throw new Exception();
+				else if (input == 1) ;
+				else if (input < 4 || input > 8) throw new Exception();
 				
 			} catch (Exception e) { 
 				System.out.println("\n> Неверный ввод\n");
@@ -42,7 +43,7 @@ public class MainClass {
 									 {false, false, false, false, false, false, false, false, false},
 									 {false, false, false, false, false, false, false, false, true},
 									 {false, false, false, false, false, false, false, false, false}};
-					GraphBipartite.isGraphBipartite(A);
+					GraphBipartite.checkGraph(A);
 			         
 			        boolean B[][] = {{false, true,  true,  false, false, false, false, false, false},
 							 		 {false, false, false, false, true,  false, false, false, false},
@@ -53,10 +54,10 @@ public class MainClass {
 							 		 {false, false, false, false, false, false, false, false, false},
 							 		 {false, false, false, false, false, false, false, false, true},
 							 		 {false, false, false, false, false, false, false, false, false}};
-			        GraphBipartite.isGraphBipartite(B);
+			        GraphBipartite.checkGraph(B);
 				    
 				} else {
-					GraphBipartite.isGraphBipartite(Matrix.createBOOLEAN(input));
+					GraphBipartite.checkGraph(Matrix.createBOOLEAN(input));
 				}
 		         
 			} 
